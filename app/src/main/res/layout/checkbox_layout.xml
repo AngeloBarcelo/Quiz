@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="main_activity"
+            class="MainActivity"
+            type="com.abcodelab.project_four.MainActivity"></variable>
+
+        <variable
+            name="check_box_lay"
+            type="com.abcodelab.project_four.CheckboxQuestionActivity"></variable>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/question_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:fontFamily="@font/fredoka_one"
+            android:text="Question #1"
+            android:textSize="38dp" />
+
+        <TextView
+            android:id="@+id/qustion_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/question_number"
+            android:layout_gravity="center"
+            android:fontFamily="@font/fredoka_one"
+            android:gravity="center"
+            android:text="Which ingredents typicaly on pizza?"
+            android:textSize="38dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/qustion_text"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/checkbox_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/qustion_text"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/fredoka_one"
+
+                android:text="Cheese"
+                android:textSize="38dp"
+                tools:layout_editor_absoluteX="50dp"
+                tools:layout_editor_absoluteY="173dp" />
+
+            <CheckBox
+                android:id="@+id/checkBox_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/checkbox_one"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/fredoka_one"
+
+                android:text="Tuna"
+                android:textSize="38dp"
+                tools:layout_editor_absoluteX="50dp"
+                tools:layout_editor_absoluteY="202dp" />
+
+            <CheckBox
+                android:id="@+id/checkBox_three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/fredoka_one"
+
+                android:text="Sand"
+                android:textSize="38dp" />
+
+            <CheckBox
+                android:id="@+id/checkBox_four"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/checkBox_three"
+                android:layout_gravity="center"
+                android:fontFamily="@font/fredoka_one"
+                android:text="Tomato Sauce"
+                android:textSize="38dp"
+                tools:layout_editor_absoluteX="50dp"
+                tools:layout_editor_absoluteY="266dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:onClick="submit"
+            android:text="Submit Answers"
+            android:layout_alignParentLeft="true" />
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:text="Final Results"
+            android:onClick="submitCheckboxAnswers"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
+</layout>
