@@ -6,25 +6,29 @@ import android.support.v7.app.AppCompatActivity;
 import com.abcodelab.project_four.databinding.ActivityScoreBinding;
 
 public class ScoreActivity extends AppCompatActivity {
-    int correctAnswer;
-    int wrongAnswer;
-    int answerAttempt;
-    int viewedQuestion;
+    int correctAnswer =99;
+    int wrongAnswer =99;
+    int answerAttempt =99;
+    int viewedQuestion =99;
     int totalScore;
+
     ActivityScoreBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this,R.layout.activity_score);
 
+        Bundle savedExtra = getIntent().getExtras();
+        correctAnswer += Integer.parseInt(String.valueOf(savedExtra.get("correctAnswer")));
+
         //binding = DataBindingUtil.setContentView(this, R.layout.activity_score);
         //setContentView(R.layout.activity_score);
     }
     public ScoreActivity(int correctAnswer,int wrongAnswer, int answerAttempt, int viewedQuestion ) {
-        this.correctAnswer = correctAnswer;
-        this.wrongAnswer = wrongAnswer;
-        this.answerAttempt = answerAttempt;
-        this.viewedQuestion = viewedQuestion;
+        this.correctAnswer += correctAnswer;
+        this.wrongAnswer += wrongAnswer;
+        this.answerAttempt += answerAttempt;
+        this.viewedQuestion += viewedQuestion;
     }
     public int getCorrectAnswer() {
         return correctAnswer;
@@ -55,16 +59,13 @@ public class ScoreActivity extends AppCompatActivity {
     }
 
     public void setViewedQuestion(int viewedQuestion) {
-        this.viewedQuestion += viewedQuestion;
-    }
-    public void setTotalScore(int correctAnswer,int answerAttempt) {
-        totalScore = correctAnswer/answerAttempt;
-        this.totalScore = totalScore;
-        binding.textView8.setText(String.valueOf(getTotalScore()));
+        this.viewedQuestion = viewedQuestion;
     }
     public int getTotalScore() {
-        totalScore= correctAnswer/answerAttempt;
         return totalScore;
     }
 
+    public void setTotalScore(int totalScore) {
+        this.totalScore = totalScore;
+    }
 }

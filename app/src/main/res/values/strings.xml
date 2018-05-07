@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Project_Four</string>
+    <string name="question_numb_title">Question #%s</string>
 </resources>

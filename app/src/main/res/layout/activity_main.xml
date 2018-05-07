@@ -7,6 +7,10 @@
             name="main_activity"
             class="MainActivity"
             type="com.abcodelab.project_four.MainActivity"></variable>
+        <variable
+            name="scoring_activity"
+            class="ScoreActivity"
+            type="com.abcodelab.project_four.ScoreActivity"></variable>
     </data>
 <ScrollView
     android:layout_width="wrap_content"
