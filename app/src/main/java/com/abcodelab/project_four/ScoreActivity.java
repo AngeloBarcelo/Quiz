@@ -3,33 +3,43 @@ package com.abcodelab.project_four;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
 import com.abcodelab.project_four.databinding.ActivityScoreBinding;
 
 public class ScoreActivity extends AppCompatActivity {
-    int correctAnswer =99;
-    int wrongAnswer =99;
-    int answerAttempt =99;
-    int viewedQuestion =99;
+
+
+    static int correctAnswer;
+    static int wrongAnswer;
+    static int answerAttempt;
+    static int viewedQuestion;
     int totalScore;
 
-    ActivityScoreBinding binding;
+    public ScoreActivity(int correctAnswer, int wrongAnswer, int answerAttempt, int viewedQuestion) {
+        ScoreActivity.correctAnswer +=correctAnswer;
+        ScoreActivity.wrongAnswer +=wrongAnswer;
+        ScoreActivity.answerAttempt +=answerAttempt;
+        ScoreActivity.viewedQuestion +=viewedQuestion;
+
+    }
+
+    public ScoreActivity() {
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_score);
+        ActivityScoreBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_score);
+        binding.correctNumb.setText(String.valueOf(getCorrectAnswer()));
+        binding.wrongAnswerNumb.setText(String.valueOf(getWrongAnswer()));
+        binding.questAnsweredNumb.setText(String.valueOf(getAnswerAttempt()));
+        binding.timesViewedNumb.setText(String.valueOf(getViewedQuestion()));
+        binding.finalScore.setText(String.valueOf(getTotalScore())+"%");
 
-        Bundle savedExtra = getIntent().getExtras();
-        correctAnswer += Integer.parseInt(String.valueOf(savedExtra.get("correctAnswer")));
 
-        //binding = DataBindingUtil.setContentView(this, R.layout.activity_score);
-        //setContentView(R.layout.activity_score);
     }
-    public ScoreActivity(int correctAnswer,int wrongAnswer, int answerAttempt, int viewedQuestion ) {
-        this.correctAnswer += correctAnswer;
-        this.wrongAnswer += wrongAnswer;
-        this.answerAttempt += answerAttempt;
-        this.viewedQuestion += viewedQuestion;
-    }
+
     public int getCorrectAnswer() {
         return correctAnswer;
     }
@@ -59,13 +69,16 @@ public class ScoreActivity extends AppCompatActivity {
     }
 
     public void setViewedQuestion(int viewedQuestion) {
-        this.viewedQuestion = viewedQuestion;
-    }
-    public int getTotalScore() {
-        return totalScore;
+        this.viewedQuestion += viewedQuestion;
     }
 
-    public void setTotalScore(int totalScore) {
-        this.totalScore = totalScore;
+    public void setTotalScore(int correctAnswer, int answerAttempt) {
+        int ts = (this.correctAnswer / this.answerAttempt) * 100;
+        this.totalScore = ts;
+    }
+
+    public int getTotalScore() {
+        int ts = ((100*correctAnswer) / (100*answerAttempt));
+        return ts;
     }
 }

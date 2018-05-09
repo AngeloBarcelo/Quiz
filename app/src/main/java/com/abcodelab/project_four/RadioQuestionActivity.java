@@ -19,18 +19,13 @@ import android.widget.Toast;
 
 import com.abcodelab.project_four.databinding.RadioBtnLayoutBinding;
 
-public class RadioQuestionActivity extends AppCompatActivity{
-    int correctAnswer;
-    int wrongAnswer;
-    int answerAttempt;
-    int viewedQuestion;
-
-
-
+public class RadioQuestionActivity extends AppCompatActivity {
+    int zeroPoints;
+    int onePoint = 1;
     int randomBackgroundNumber = (int) (5.0 * Math.random());
     int randomQuestionGenerated = 0;//(int) (4.0 * Math.random());
     RadioBtnLayoutBinding binding;
-
+    ScoreActivity scoreActivity = new ScoreActivity(zeroPoints,zeroPoints,zeroPoints,0);
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
@@ -39,8 +34,7 @@ public class RadioQuestionActivity extends AppCompatActivity{
         binding = DataBindingUtil.setContentView(this, R.layout.radio_btn_layout);
         Bundle savedExtra = getIntent().getExtras();
 
-        viewedQuestion++;
-
+        scoreActivity.setViewedQuestion(onePoint);
 
         //Sets background image
         switch (randomBackgroundNumber) {
@@ -65,10 +59,10 @@ public class RadioQuestionActivity extends AppCompatActivity{
         }
         String questionNumber = getString(R.string.question_numb_title);
         questionNumber = String.format(questionNumber, String.valueOf(savedExtra.get("questionPassed")));
-        //Displays questions based on question clicked extra
+
+//Sets question one based on random number. There are five question choices for Q1 & Q2
         switch (Integer.parseInt(String.valueOf(savedExtra.get("questionPassed")))) {
             case 1:
-                //Sets question one based on random number. There are five choices.
                 //Yes, a switch would have been better. But requirements dictated if/then statement
                 if (randomQuestionGenerated == 0) {
                     binding.questionNumber.setText(questionNumber);
@@ -154,28 +148,30 @@ public class RadioQuestionActivity extends AppCompatActivity{
             Toast.makeText(getApplicationContext(), "Please select an answer", Toast.LENGTH_SHORT).show();
         } else {
             int receivedView = v.getId();
-            answerAttempt++;
+            scoreActivity.setAnswerAttempt(onePoint);
             Log.i("Received view", String.valueOf(receivedView));
-            //Correct answer
-            if (binding.answerOne.isChecked()){
-                correctAnswer++;
 
-            }
-            else {
-                wrongAnswer++;
+            //Correct answer
+            if (binding.answerOne.isChecked()) {
+                scoreActivity.setCorrectAnswer(onePoint);
+            } else {
+                scoreActivity.setWrongAnswer(onePoint);
             }
 
             Intent intent = new Intent(this, MainActivity.class);
-            intent.putExtra("correctAnswer",correctAnswer);
-            intent.putExtra("wrongAnswer",wrongAnswer);
-            intent.putExtra("answerAttempt",answerAttempt);
-            intent.putExtra("viewedQuestion",viewedQuestion);
-            startActivity(intent);
-
-            ScoreActivity scoreActivity = new ScoreActivity(0,0,0,0);
-            scoreActivity.setCorrectAnswer(correctAnswer);
+            Log.i("Received view", String.valueOf(scoreActivity.getAnswerAttempt()));
             Log.i("Received view", String.valueOf(scoreActivity.getCorrectAnswer()));
+//            intent.putExtra("correctAnswer",correctAnswer);
+//            intent.putExtra("wrongAnswer",wrongAnswer);
+//            intent.putExtra("answerAttempt",answerAttempt);
+//            intent.putExtra("viewedQuestion",viewedQuestion);
+            startActivity(intent);
         }
-}}
+    }
+    public void finalResults(View v){
+        Intent intent = new Intent(this, ScoreActivity.class);
+        startActivity(intent);
+    }
+}
 
 

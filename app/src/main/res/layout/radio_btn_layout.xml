@@ -119,6 +119,7 @@
             android:layout_alignParentRight="true"
             android:fontFamily="@font/fredoka_one"
             android:text="Final Result"
+            android:onClick="finalResults"
 
             android:textSize="18sp" />
 

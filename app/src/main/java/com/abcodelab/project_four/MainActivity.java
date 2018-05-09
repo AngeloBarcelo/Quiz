@@ -7,6 +7,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+
 import com.abcodelab.project_four.databinding.ActivityMainBinding;
 import com.abcodelab.project_four.databinding.ActivityScoreBinding;
 
@@ -15,23 +16,17 @@ import static java.lang.Integer.*;
 
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
-    ActivityScoreBinding scoreActivityBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        scoreActivityBinding = DataBindingUtil.setContentView(this, R.layout.activity_score);
     }
 
     //Nothing gets returned. Just intents to start the other activities.
     //The extra'a are sent to generate the title question number.
     public void questioBtnPressed(View v) {
         int received_ID = v.getId();
-        Log.i("btn: ", String.valueOf(received_ID));
-ScoreActivity scoreActivity = new ScoreActivity(0,0,0,0);
-        Log.i("Corrt", String.valueOf(scoreActivity.getCorrectAnswer()));
-
         switch (received_ID) {
             case R.id.title_btn1:
                 Intent intent1 = new Intent(getApplicationContext(), RadioQuestionActivity.class);
