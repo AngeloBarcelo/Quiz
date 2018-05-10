@@ -13,7 +13,7 @@ import com.abcodelab.project_four.databinding.TextEntryActivityBinding;
 
 public class TextEntryActivity extends AppCompatActivity {
     TextEntryActivityBinding binding;
-    ScoreActivity scoring = new ScoreActivity(0,0,0,0);
+    ScoreActivity scoring = new ScoreActivity(0, 0, 0, 0, 0);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

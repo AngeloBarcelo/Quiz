@@ -25,7 +25,8 @@ public class RadioQuestionActivity extends AppCompatActivity {
     int randomBackgroundNumber = (int) (5.0 * Math.random());
     int randomQuestionGenerated = 0;//(int) (4.0 * Math.random());
     RadioBtnLayoutBinding binding;
-    ScoreActivity scoreActivity = new ScoreActivity(zeroPoints,zeroPoints,zeroPoints,0);
+    ScoreActivity scoreActivity = new ScoreActivity(zeroPoints, zeroPoints, zeroPoints, 0, 0);
+
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
@@ -157,10 +158,10 @@ public class RadioQuestionActivity extends AppCompatActivity {
             } else {
                 scoreActivity.setWrongAnswer(onePoint);
             }
-
+            Log.i("Total Score", String.valueOf(scoreActivity.getTotalScore()));
             Intent intent = new Intent(this, MainActivity.class);
-            Log.i("Received view", String.valueOf(scoreActivity.getAnswerAttempt()));
-            Log.i("Received view", String.valueOf(scoreActivity.getCorrectAnswer()));
+            Log.i("Attempted", String.valueOf(scoreActivity.getAnswerAttempt()));
+            Log.i("Correct", String.valueOf(scoreActivity.getCorrectAnswer()));
 //            intent.putExtra("correctAnswer",correctAnswer);
 //            intent.putExtra("wrongAnswer",wrongAnswer);
 //            intent.putExtra("answerAttempt",answerAttempt);
@@ -169,6 +170,7 @@ public class RadioQuestionActivity extends AppCompatActivity {
         }
     }
     public void finalResults(View v){
+        Log.i("Total Score", String.valueOf(scoreActivity.getTotalScore()));
         Intent intent = new Intent(this, ScoreActivity.class);
         startActivity(intent);
     }

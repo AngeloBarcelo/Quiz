@@ -12,7 +12,7 @@ import com.abcodelab.project_four.databinding.CheckboxLayoutBinding;
 
 public class CheckboxQuestionActivity extends AppCompatActivity {
     CheckboxLayoutBinding binding;
-    ScoreActivity scoring = new ScoreActivity(0,0,0,0);
+    ScoreActivity scoring = new ScoreActivity(0, 0, 0, 0, 0);
     String savedExtra;
 
     @Override

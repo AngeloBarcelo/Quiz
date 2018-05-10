@@ -13,14 +13,14 @@ public class ScoreActivity extends AppCompatActivity {
     static int wrongAnswer;
     static int answerAttempt;
     static int viewedQuestion;
-    int totalScore;
+    static int totalScore;
 
-    public ScoreActivity(int correctAnswer, int wrongAnswer, int answerAttempt, int viewedQuestion) {
-        ScoreActivity.correctAnswer +=correctAnswer;
-        ScoreActivity.wrongAnswer +=wrongAnswer;
-        ScoreActivity.answerAttempt +=answerAttempt;
-        ScoreActivity.viewedQuestion +=viewedQuestion;
-
+    public ScoreActivity(int correctAnswer, int wrongAnswer, int answerAttempt, int viewedQuestion, int totalScore) {
+        ScoreActivity.correctAnswer += correctAnswer;
+        ScoreActivity.wrongAnswer += wrongAnswer;
+        ScoreActivity.answerAttempt += answerAttempt;
+        ScoreActivity.viewedQuestion += viewedQuestion;
+        ScoreActivity.totalScore = totalScore;
     }
 
     public ScoreActivity() {
@@ -36,8 +36,6 @@ public class ScoreActivity extends AppCompatActivity {
         binding.questAnsweredNumb.setText(String.valueOf(getAnswerAttempt()));
         binding.timesViewedNumb.setText(String.valueOf(getViewedQuestion()));
         binding.finalScore.setText(String.valueOf(getTotalScore())+"%");
-
-
     }
 
     public int getCorrectAnswer() {
@@ -72,13 +70,8 @@ public class ScoreActivity extends AppCompatActivity {
         this.viewedQuestion += viewedQuestion;
     }
 
-    public void setTotalScore(int correctAnswer, int answerAttempt) {
-        int ts = (this.correctAnswer / this.answerAttempt) * 100;
-        this.totalScore = ts;
-    }
-
-    public int getTotalScore() {
-        int ts = ((100*correctAnswer) / (100*answerAttempt));
+    public double getTotalScore() {
+        double ts = (double) getCorrectAnswer() / getAnswerAttempt() * 100.00;
         return ts;
     }
 }
