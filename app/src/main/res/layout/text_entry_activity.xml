@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView4"
             android:layout_centerHorizontal="true"
-            android:text="TextView"
+            android:text="who is the richest person in the world"
             android:textSize="38sp"
             app:fontFamily="@font/fredoka_one" />
 
@@ -69,6 +69,7 @@
             android:layout_weight="1"
             android:onClick="submit"
             android:text="Submit Answer"
+            android:layout_alignParentLeft="true"
             android:textSize="18sp" />
 
 

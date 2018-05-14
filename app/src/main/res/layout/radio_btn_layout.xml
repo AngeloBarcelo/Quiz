@@ -16,7 +16,7 @@
     </data>
 
     <RelativeLayout
-        android:id="@+id/top_layout"
+        android:id="@+id/radio_top_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -27,7 +27,6 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:text="Question #1"
             android:textSize="38sp"
             android:textColor="#000000"
             app:fontFamily="@font/fredoka_one"
@@ -41,7 +40,6 @@
             android:textColor="#000000"
             android:layout_below="@+id/question_number"
             android:gravity="center"
-            android:text="What is rock made out of?"
             android:textSize="38sp"
             app:fontFamily="@font/fredoka_one"
             android:layout_alignParentLeft="true" />
@@ -62,7 +60,6 @@
                 android:layout_centerHorizontal="true"
                 android:checked="false"
                 android:fontFamily="@font/fredoka_one"
-                android:text="RadioButton"
                 android:textSize="38sp"
                  />
 
@@ -73,7 +70,6 @@
                 android:layout_below="@+id/radioButton"
                 android:layout_centerHorizontal="true"
                 android:fontFamily="@font/fredoka_one"
-                android:text="RadioButton"
                 android:textSize="38sp"
                 />
 
@@ -83,7 +79,6 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:fontFamily="@font/fredoka_one"
-                android:text="RadioButton"
                 android:textSize="36sp"
                  />
 
@@ -94,7 +89,6 @@
                 android:layout_below="@+id/radioButton3"
                 android:layout_centerHorizontal="true"
                 android:fontFamily="@font/fredoka_one"
-                android:text="RadioButton"
                 android:textSize="38sp" />
         </RadioGroup>
 
@@ -106,8 +100,8 @@
             android:layout_alignParentStart="true"
             android:fontFamily="@font/fredoka_one"
             android:onClick="submitRadioAnswers"
-            android:text="Submit Answer"
             android:textSize="18sp"
+            android:text="Submit Answer"
             android:layout_alignParentLeft="true" />
 
         <Button
@@ -118,9 +112,8 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:fontFamily="@font/fredoka_one"
-            android:text="Final Result"
             android:onClick="finalResults"
-
+            android:text="Get Final Results"
             android:textSize="18sp" />
 
     </RelativeLayout>

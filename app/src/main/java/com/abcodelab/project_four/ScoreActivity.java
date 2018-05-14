@@ -7,8 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import com.abcodelab.project_four.databinding.ActivityScoreBinding;
 
 public class ScoreActivity extends AppCompatActivity {
-
-
     static int correctAnswer;
     static int wrongAnswer;
     static int answerAttempt;
@@ -16,16 +14,52 @@ public class ScoreActivity extends AppCompatActivity {
     static int totalScore;
 
     public ScoreActivity(int correctAnswer, int wrongAnswer, int answerAttempt, int viewedQuestion, int totalScore) {
-        ScoreActivity.correctAnswer += correctAnswer;
-        ScoreActivity.wrongAnswer += wrongAnswer;
-        ScoreActivity.answerAttempt += answerAttempt;
-        ScoreActivity.viewedQuestion += viewedQuestion;
-        ScoreActivity.totalScore = totalScore;
+        this.correctAnswer += correctAnswer;
+        this.wrongAnswer += wrongAnswer;
+        this.answerAttempt += answerAttempt;
+        this.viewedQuestion += viewedQuestion;
+        this.totalScore = totalScore;
     }
 
     public ScoreActivity() {
     }
 
+    public static int getCorrectAnswer() {
+        return correctAnswer;
+    }
+
+    public static void setCorrectAnswer(int correctAnswer) {
+        ScoreActivity.correctAnswer += correctAnswer;
+    }
+
+    public static int getWrongAnswer() {
+        return wrongAnswer;
+    }
+
+    public static void setWrongAnswer(int wrongAnswer) {
+        ScoreActivity.wrongAnswer += wrongAnswer;
+    }
+
+    public static int getAnswerAttempt() {
+        return answerAttempt;
+    }
+
+    public static void setAnswerAttempt(int answerAttempt) {
+        ScoreActivity.answerAttempt += answerAttempt;
+    }
+
+    public static int getViewedQuestion() {
+        return viewedQuestion;
+    }
+
+    public static void setViewedQuestion(int viewedQuestion) {
+        ScoreActivity.viewedQuestion += viewedQuestion;
+    }
+
+    public static double getTotalScore() {
+        double ts = (double) getCorrectAnswer() / getAnswerAttempt() * 100.00;
+        return ts;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,43 +69,6 @@ public class ScoreActivity extends AppCompatActivity {
         binding.wrongAnswerNumb.setText(String.valueOf(getWrongAnswer()));
         binding.questAnsweredNumb.setText(String.valueOf(getAnswerAttempt()));
         binding.timesViewedNumb.setText(String.valueOf(getViewedQuestion()));
-        binding.finalScore.setText(String.valueOf(getTotalScore())+"%");
-    }
-
-    public int getCorrectAnswer() {
-        return correctAnswer;
-    }
-
-    public void setCorrectAnswer(int correctAnswer) {
-        this.correctAnswer += correctAnswer;
-    }
-
-    public int getWrongAnswer() {
-        return wrongAnswer;
-    }
-
-    public void setWrongAnswer(int wrongAnswer) {
-        this.wrongAnswer += wrongAnswer;
-    }
-
-    public int getAnswerAttempt() {
-        return answerAttempt;
-    }
-
-    public void setAnswerAttempt(int answerAttempt) {
-        this.answerAttempt += answerAttempt;
-    }
-
-    public int getViewedQuestion() {
-        return viewedQuestion;
-    }
-
-    public void setViewedQuestion(int viewedQuestion) {
-        this.viewedQuestion += viewedQuestion;
-    }
-
-    public double getTotalScore() {
-        double ts = (double) getCorrectAnswer() / getAnswerAttempt() * 100.00;
-        return ts;
+        binding.finalScore.setText(String.valueOf((int) getTotalScore()) + "%");
     }
 }

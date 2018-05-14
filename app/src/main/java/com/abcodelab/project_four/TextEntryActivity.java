@@ -13,27 +13,29 @@ import com.abcodelab.project_four.databinding.TextEntryActivityBinding;
 
 public class TextEntryActivity extends AppCompatActivity {
     TextEntryActivityBinding binding;
-    ScoreActivity scoring = new ScoreActivity(0, 0, 0, 0, 0);
+    int onePoint = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.text_entry_activity);
+        ScoreActivity.setViewedQuestion(onePoint);
     }
 
     public void submit(View v) {
         String enteredAnswer = binding.editText.getText().toString();
 
-        scoring.setAnswerAttempt(1);
+        ScoreActivity.setAnswerAttempt(onePoint);
         if (enteredAnswer.isEmpty()) {
             Toast.makeText(getApplicationContext(), "Please enter an answer", Toast.LENGTH_SHORT).show();
         } else {
-            if (enteredAnswer.equals("green")) {
-                scoring.setCorrectAnswer(1);
+            if (enteredAnswer.equalsIgnoreCase(("Jeff Bezos")) || enteredAnswer.equalsIgnoreCase("JB") ||
+                    enteredAnswer.equalsIgnoreCase("Jeff") || enteredAnswer.equalsIgnoreCase("Bezos")) {
+                ScoreActivity.setCorrectAnswer(onePoint);
                 Toast.makeText(getApplicationContext(), "coorect", Toast.LENGTH_SHORT).show();
                 Log.i("Message ", "good answer");
             } else {
-                scoring.setWrongAnswer(1);
+                ScoreActivity.setWrongAnswer(onePoint);
                 Log.i("Message ", "wrong answer");
             }
         }
