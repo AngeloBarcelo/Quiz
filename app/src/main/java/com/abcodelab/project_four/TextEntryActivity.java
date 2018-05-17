@@ -1,5 +1,6 @@
 package com.abcodelab.project_four;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -28,16 +29,21 @@ public class TextEntryActivity extends AppCompatActivity {
         ScoreActivity.setAnswerAttempt(onePoint);
         if (enteredAnswer.isEmpty()) {
             Toast.makeText(getApplicationContext(), "Please enter an answer", Toast.LENGTH_SHORT).show();
+
+            //Non empty results
         } else {
-            if (enteredAnswer.equalsIgnoreCase(("Jeff Bezos")) || enteredAnswer.equalsIgnoreCase("JB") ||
-                    enteredAnswer.equalsIgnoreCase("Jeff") || enteredAnswer.equalsIgnoreCase("Bezos")) {
+
+            //Correct answer
+            if (enteredAnswer.equalsIgnoreCase(("Jeff Bezos")) ||
+                    enteredAnswer.equalsIgnoreCase("JB") ||
+                    enteredAnswer.equalsIgnoreCase("Jeff") ||
+                    enteredAnswer.equalsIgnoreCase("Bezos")) {
                 ScoreActivity.setCorrectAnswer(onePoint);
-                Toast.makeText(getApplicationContext(), "coorect", Toast.LENGTH_SHORT).show();
-                Log.i("Message ", "good answer");
             } else {
                 ScoreActivity.setWrongAnswer(onePoint);
-                Log.i("Message ", "wrong answer");
             }
+            Intent intent = new Intent(this, ScoreActivity.class);
+            startActivity(intent);
         }
     }
 }
