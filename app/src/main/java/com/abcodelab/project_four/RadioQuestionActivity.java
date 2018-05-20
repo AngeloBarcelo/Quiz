@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 import com.abcodelab.project_four.databinding.RadioBtnLayoutBinding;
+import com.abcodelab.project_four.databinding.ActivityMainBinding;
 
 public class RadioQuestionActivity extends AppCompatActivity {
     int zeroPoints;
@@ -22,12 +23,14 @@ public class RadioQuestionActivity extends AppCompatActivity {
     int randomBackgroundNumber = (int) (5.0 * Math.random());
     int randomQuestionGenerated = 0;//(int) (4.0 * Math.random());
     RadioBtnLayoutBinding binding;
+    ActivityMainBinding mainBinding;
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.radio_btn_layout);
+
         Bundle savedExtra = getIntent().getExtras();
 
         ScoreActivity.setViewedQuestion(onePoint);
@@ -57,8 +60,10 @@ public class RadioQuestionActivity extends AppCompatActivity {
         questionNumber = String.format(questionNumber, String.valueOf(savedExtra.get("questionPassed")));
 
         //Sets question one based on random number. There are five question choices for Q1 & Q2
-        //Yes, a switch would have been better. But requirements dictated if/then statement
+        //Yes, a switch would have been better. But requirements dictated if/else statement
         switch (Integer.parseInt(String.valueOf(savedExtra.get("questionPassed")))) {
+
+            //Title btn #1 is selected
             case 1:
                 if (randomQuestionGenerated == 0) {
                     binding.questionNumber.setText(questionNumber);
@@ -97,6 +102,8 @@ public class RadioQuestionActivity extends AppCompatActivity {
                     binding.answerFour.setText("Donald Trump");
                 }
                 break;
+
+            //Title btn #2 is selected
             case 2:
                 if (randomQuestionGenerated == 0) {
                     binding.questionNumber.setText(questionNumber);

@@ -1,9 +1,10 @@
 package com.abcodelab.project_four;
 
+import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-
+import android.widget.Toast;
 import com.abcodelab.project_four.databinding.ActivityScoreBinding;
 
 public class ScoreActivity extends AppCompatActivity {
@@ -59,6 +60,11 @@ public class ScoreActivity extends AppCompatActivity {
     public static double getTotalScore() {
         double ts = (double) getCorrectAnswer() / getAnswerAttempt() * 100.00;
         return ts;
+    }
+
+    public static void displayScore(Context context) {
+        Toast.makeText(context, "Here is your score", Toast.LENGTH_SHORT).show();
+
     }
 
     @Override

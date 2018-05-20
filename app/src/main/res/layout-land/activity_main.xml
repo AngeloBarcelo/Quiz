@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="main_activity"
+            class="MainActivity"
+            type="com.abcodelab.project_four.MainActivity"></variable>
+
+        <variable
+            name="scoring_activity"
+            class="ScoreActivity"
+            type="com.abcodelab.project_four.ScoreActivity"></variable>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="263dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="183dp"
+                android:src="@drawable/logo" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/scoring1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:onClick="scoreDisplay"
+                app:cardBackgroundColor="#fd3169"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp">
+
+                <TextView
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:onClick="scoreDisplay"
+                    android:text="Get current score"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff"
+                    android:textSize="38sp"
+                    app:fontFamily="@font/fredoka_one" />
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbarStyle="outsideInset">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/title_btn1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="18dp"
+                    android:onClick="questioBtnPressed"
+                    app:cardBackgroundColor="#FFE358"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="24dp">
+
+                    <TextView
+                        android:id="@+id/tv1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Question #1"
+                        android:textAllCaps="false"
+                        android:textColor="#3298F2"
+                        android:textSize="38sp"
+                        app:fontFamily="@font/fredoka_one" />
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/title_btn2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:onClick="questioBtnPressed"
+                    app:cardBackgroundColor="#FFE358"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Question #2"
+                        android:textColor="#3298F2"
+                        android:textSize="38sp"
+                        app:fontFamily="@font/fredoka_one" />
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/title_btn3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:onClick="questioBtnPressed"
+                    app:cardBackgroundColor="#FFE358"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Question #3"
+                        android:textColor="#3298F2"
+                        android:textSize="38sp"
+                        app:fontFamily="@font/fredoka_one" />
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/title_btn4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:onClick="questioBtnPressed"
+                    app:cardBackgroundColor="#FFE358"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Question #4"
+                        android:textColor="#3298F2"
+                        android:textSize="38sp"
+                        app:fontFamily="@font/fredoka_one" />
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/title_btn5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:onClick="questioBtnPressed"
+                    app:cardBackgroundColor="#FFE358"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Question #5"
+                        android:textColor="#3298F2"
+                        android:textSize="38sp"
+                        app:fontFamily="@font/fredoka_one" />
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/title_btn6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:onClick="displayScore"
+                    app:cardBackgroundColor="#FFE358"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:onClick="questioBtnPressed"
+                        android:text="Question #6"
+                        android:textColor="#3298F2"
+                        android:textSize="38sp"
+                        app:fontFamily="@font/fredoka_one" />
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

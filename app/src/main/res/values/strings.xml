@@ -3,4 +3,10 @@
     <string name="question_numb_title">Question #%s</string>
     <string name="pick_something_please">Please select an answer</string>
     <string name="select_one_more">Please select at least one more</string>
+    <string name="total_score">Score: %s</string>
+    <string name="correct_answers">Correct Answers: %s</string>
+    <string name="incorrect_answers">Incorrect Answers: %s</string>
+    <string name="viewed_questions">Viewed questions %s times</string>
+    <string name="total_questions">Answered %s questions</string>
+    <string name="view_score_screen">Long click to view score screen</string>
 </resources>

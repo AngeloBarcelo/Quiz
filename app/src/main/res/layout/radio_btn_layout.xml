@@ -97,23 +97,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
+            android:layout_centerHorizontal="true"
             android:fontFamily="@font/fredoka_one"
             android:onClick="submitRadioAnswers"
-            android:textSize="18sp"
             android:text="Submit Answer"
-            android:layout_alignParentLeft="true" />
-
-        <Button
-            android:id="@+id/btn_next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:fontFamily="@font/fredoka_one"
-            android:onClick="finalResults"
-            android:text="Get Final Results"
             android:textSize="18sp" />
 
     </RelativeLayout>

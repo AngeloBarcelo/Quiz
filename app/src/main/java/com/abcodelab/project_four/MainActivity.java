@@ -3,16 +3,11 @@ package com.abcodelab.project_four;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.abcodelab.project_four.databinding.ActivityMainBinding;
-import com.abcodelab.project_four.databinding.ActivityScoreBinding;
-
-import static java.lang.Integer.*;
-
 
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
@@ -21,6 +16,29 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+
+        //Sets the progressbar by the total # of questions answered regardless of the question
+        switch (ScoreActivity.getAnswerAttempt()) {
+            case 0:
+                binding.progressBar.setProgress(0);
+                break;
+            case 1:
+                binding.progressBar.setProgress(17);
+                break;
+            case 2:
+                binding.progressBar.setProgress(34);
+                break;
+            case 3:
+                binding.progressBar.setProgress(51);
+            case 4:
+                binding.progressBar.setProgress(68);
+                break;
+            case 5:
+                binding.progressBar.setProgress(85);
+                break;
+            default:
+                binding.progressBar.setProgress(100);
+        }
     }
 
     //Nothing gets returned. Just intents to start the other activities.
@@ -59,5 +77,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent6);
                 break;
         }
+    }
+
+    public void scoreDisplay(View v) {
+        String line1 = String.format(getString(R.string.total_score), ScoreActivity.getTotalScore() + "%");
+        String line2 = String.format(getString(R.string.correct_answers), String.valueOf(ScoreActivity.getCorrectAnswer()));
+        String line3 = String.format(getString(R.string.incorrect_answers), String.valueOf(ScoreActivity.getWrongAnswer()));
+        String line4 = String.format(getString(R.string.viewed_questions), String.valueOf(ScoreActivity.getViewedQuestion()));
+        String line5 = String.format(getString(R.string.total_questions), String.valueOf(ScoreActivity.getAnswerAttempt()));
+        String line6 = getString(R.string.view_score_screen);
+
+        String outputMessage = line1 + "\n" + line2 + "\n" + line3 + "\n" + line4 + "\n" + line5 + "\n\n" + line6;
+        Toast.makeText(getApplicationContext(), outputMessage, Toast.LENGTH_SHORT).show();
     }
 }
