@@ -9,4 +9,5 @@
     <string name="viewed_questions">Viewed questions %s times</string>
     <string name="total_questions">Answered %s questions</string>
     <string name="view_score_screen">Long click to view score screen</string>
+    <string name="title_question_1">Question #1</string>
 </resources>
