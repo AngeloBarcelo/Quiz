@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="main_activity"
             class="MainActivity"
@@ -13,111 +14,116 @@
             class="ScoreActivity"
             type="com.abcodelab.project_four.ScoreActivity"></variable>
     </data>
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/title_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:text="Final Score"
-        android:textSize="26sp"
-        app:fontFamily="@font/fredoka_one" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/final_score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/title_text"
-        android:layout_centerHorizontal="true"
-        android:text="100"
-        android:textSize="26sp"
-        app:fontFamily="@font/fredoka_one" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/correct_answers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="65dp"
-        android:text="Correct Answers: "
-        android:textSize="26sp"
-        app:fontFamily="@font/fredoka_one" />
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_question_size"
+                app:fontFamily="@font/fredoka_one" />
 
-    <TextView
-        android:id="@+id/times_viewed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/quest_answered_numb"
-        android:layout_centerHorizontal="true"
-        android:text="Times viewed the Questions"
-        android:textAlignment="center"
-        android:textSize="26sp"
-        app:fontFamily="@font/fredoka_one" />
+            <TextView
+                android:id="@+id/final_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title_text"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_question_size"
+                app:fontFamily="@font/fredoka_one" />
 
-    <TextView
-        android:id="@+id/correct_numb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/correct_answers"
-        android:layout_centerHorizontal="true"
-        android:text="100"
-        android:textSize="26sp"
-        app:fontFamily="@font/fredoka_one" />
+            <TextView
+                android:id="@+id/correct_answers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/correct_numb"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_question_size"
+                app:fontFamily="@font/fredoka_one" />
 
-    <TextView
-        android:id="@+id/times_viewed_numb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/times_viewed"
-        android:layout_centerHorizontal="true"
-        android:text="100"
-        android:textSize="26sp"
-        app:fontFamily="@font/fredoka_one" />
+            <TextView
+                android:id="@+id/correct_numb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/quest_answered"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_question_size"
+                app:fontFamily="@font/fredoka_one" />
 
-    <TextView
-        android:id="@+id/wrong_answers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/times_viewed_numb"
-        android:layout_centerHorizontal="true"
-        android:text="Incorrect Answers: "
-        android:textSize="26sp"
-        app:fontFamily="@font/fredoka_one" />
+            <TextView
+                android:id="@+id/wrong_answers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/wrong_answer_numb"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_question_size"
+                app:fontFamily="@font/fredoka_one" />
 
-    <TextView
-        android:id="@+id/wrong_answer_numb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/wrong_answers"
-        android:layout_centerHorizontal="true"
-        android:text="100"
-        android:textSize="26sp"
-        app:fontFamily="@font/fredoka_one" />
+            <TextView
+                android:id="@+id/wrong_answer_numb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_question_size"
+                app:fontFamily="@font/fredoka_one" />
 
-    <TextView
-        android:id="@+id/quest_answered"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/correct_numb"
-        android:layout_centerHorizontal="true"
-        android:text="Questions Answered"
-        android:textSize="26sp"
-        app:fontFamily="@font/fredoka_one" />
+            <TextView
+                android:id="@+id/times_viewed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/times_viewed_numb"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_question_size"
+                app:fontFamily="@font/fredoka_one" />
 
-    <TextView
-        android:id="@+id/quest_answered_numb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/quest_answered"
-        android:layout_centerHorizontal="true"
-        android:text="100"
-        android:textSize="26sp"
-        app:fontFamily="@font/fredoka_one" />
+            <TextView
+                android:id="@+id/times_viewed_numb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/wrong_answers"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_question_size"
+                app:fontFamily="@font/fredoka_one" />
 
-</RelativeLayout>
+
+            <TextView
+                android:id="@+id/quest_answered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/quest_answered_numb"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_question_size"
+                app:fontFamily="@font/fredoka_one" />
+
+            <TextView
+                android:id="@+id/quest_answered_numb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_question_size"
+                app:fontFamily="@font/fredoka_one" />
+
+        </LinearLayout>
+    </ScrollView>
 </layout>

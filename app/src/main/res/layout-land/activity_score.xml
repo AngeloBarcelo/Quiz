@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="main_activity"
+            class="MainActivity"
+            type="com.abcodelab.project_four.MainActivity"></variable>
+
+        <variable
+            name="scoring"
+            class="ScoreActivity"
+            type="com.abcodelab.project_four.ScoreActivity"></variable>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_question_size"
+            app:fontFamily="@font/fredoka_one" />
+
+        <TextView
+            android:id="@+id/final_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/title_text"
+            android:layout_toRightOf="@+id/title_text"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_question_size"
+            app:fontFamily="@font/fredoka_one" />
+
+        <TextView
+            android:id="@+id/correct_answers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/title_text"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_question_size"
+            app:fontFamily="@font/fredoka_one" />
+
+        <TextView
+            android:id="@+id/correct_numb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title_text"
+            android:layout_toEndOf="@+id/correct_answers"
+            android:layout_toRightOf="@+id/correct_answers"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_question_size"
+            app:fontFamily="@font/fredoka_one" />
+
+        <TextView
+            android:id="@+id/wrong_answers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/correct_answers"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_question_size"
+            app:fontFamily="@font/fredoka_one" />
+
+        <TextView
+            android:id="@+id/wrong_answer_numb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/correct_answers"
+            android:layout_toEndOf="@+id/wrong_answers"
+            android:layout_toRightOf="@+id/wrong_answers"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_question_size"
+            app:fontFamily="@font/fredoka_one" />
+
+        <TextView
+            android:id="@+id/times_viewed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/wrong_answers"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_question_size"
+            app:fontFamily="@font/fredoka_one" />
+
+        <TextView
+            android:id="@+id/times_viewed_numb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/wrong_answers"
+            android:layout_toEndOf="@+id/times_viewed"
+            android:layout_toRightOf="@+id/times_viewed"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_question_size"
+            app:fontFamily="@font/fredoka_one" />
+
+        <TextView
+            android:id="@+id/quest_answered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/times_viewed"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_question_size"
+            app:fontFamily="@font/fredoka_one" />
+
+        <TextView
+            android:id="@+id/quest_answered_numb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/times_viewed"
+            android:layout_toEndOf="@+id/quest_answered"
+            android:layout_toRightOf="@+id/quest_answered"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_question_size"
+            app:fontFamily="@font/fredoka_one" />
+
+    </RelativeLayout>
+</layout>

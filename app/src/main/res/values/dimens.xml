@@ -4,4 +4,5 @@
     <dimen name="corner_size">20dp</dimen>
     <dimen name="card_elevation">24dp</dimen>
     <dimen name="text_question_size">38sp</dimen>
+    <dimen name="btn_text_size">18sp</dimen>
 </resources>

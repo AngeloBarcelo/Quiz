@@ -27,22 +27,20 @@
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             android:fontFamily="@font/fredoka_one"
-            android:text="q1"
-            android:textSize="38dp" />
+            android:textColor="@color/question_text"
+            android:textSize="@dimen/text_question_size" />
 
         <TextView
             android:id="@+id/qustion_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
             android:layout_below="@+id/question_number"
+            android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             android:fontFamily="@font/fredoka_one"
-            android:textColor="#000000"
             android:gravity="center"
-            android:text="Which ingredents typicaly on pizza?"
-            android:textSize="38dp" />
+            android:textColor="@color/question_text"
+            android:textSize="@dimen/text_question_size" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -58,9 +56,8 @@
                 android:layout_below="@+id/qustion_text"
                 android:layout_centerHorizontal="true"
                 android:fontFamily="@font/fredoka_one"
-                android:textColor="#000000"
-                android:text="Cheese"
-                android:textSize="38dp"
+                android:textColor="@color/question_text"
+                android:textSize="@dimen/text_question_size"
                 tools:layout_editor_absoluteX="50dp"
                 tools:layout_editor_absoluteY="173dp" />
 
@@ -71,9 +68,8 @@
                 android:layout_below="@+id/checkbox_one"
                 android:layout_centerHorizontal="true"
                 android:fontFamily="@font/fredoka_one"
-                android:textColor="#000000"
-                android:text="Tuna"
-                android:textSize="38dp"
+                android:textColor="@color/question_text"
+                android:textSize="@dimen/text_question_size"
                 tools:layout_editor_absoluteX="50dp"
                 tools:layout_editor_absoluteY="202dp" />
 
@@ -83,9 +79,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:fontFamily="@font/fredoka_one"
-                android:textColor="#000000"
-                android:text="Sand"
-                android:textSize="38dp" />
+                android:textColor="@color/question_text"
+                android:textSize="@dimen/text_question_size" />
 
             <CheckBox
                 android:id="@+id/checkBox_four"
@@ -94,11 +89,9 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/checkBox_three"
-
                 android:fontFamily="@font/fredoka_one"
-                android:text="Tomato Sauce"
-                android:textSize="38dp"
-                android:textColor="#000000"
+                android:textColor="@color/question_text"
+                android:textSize="@dimen/text_question_size"
                 tools:layout_editor_absoluteX="50dp"
                 tools:layout_editor_absoluteY="266dp" />
         </LinearLayout>

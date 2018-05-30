@@ -19,7 +19,7 @@ import com.abcodelab.project_four.databinding.CheckboxLayoutBinding;
 public class CheckboxQuestionActivity extends AppCompatActivity {
     int onePoint = 1;
     int randomBackgroundNumber = (int) (5.0 * Math.random());
-    int randomQuestionGenerated = 0;//(int) (4.0 * Math.random());
+    int randomQuestionGenerated = (int) (4.0 * Math.random());
     CheckboxLayoutBinding binding;
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
@@ -28,111 +28,108 @@ public class CheckboxQuestionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.checkbox_layout);
         Bundle savedExtra = getIntent().getExtras();
-
         ScoreActivity.setViewedQuestion(onePoint);
 
         //Sets background image
         switch (randomBackgroundNumber) {
             case 0:
-                binding.checkboxTopLayout.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.mbbgfb26));
+                binding.checkboxTopLayout.setBackground(ContextCompat.
+                        getDrawable(getApplicationContext(), R.drawable.mbbgfb26));
                 break;
             case 1:
-                binding.checkboxTopLayout.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.mbbgfb27));
+                binding.checkboxTopLayout.setBackground(ContextCompat.
+                        getDrawable(getApplicationContext(), R.drawable.mbbgfb27));
                 break;
             case 2:
-                binding.checkboxTopLayout.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.mbbgfb28));
+                binding.checkboxTopLayout.setBackground(ContextCompat.
+                        getDrawable(getApplicationContext(), R.drawable.mbbgfb28));
                 break;
             case 3:
-                binding.checkboxTopLayout.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.pinkyellowandblue));
+                binding.checkboxTopLayout.setBackground(ContextCompat.
+                        getDrawable(getApplicationContext(), R.drawable.pinkyellowandblue));
                 break;
             case 4:
-                binding.checkboxTopLayout.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.redblue));
+                binding.checkboxTopLayout.setBackground(ContextCompat.
+                        getDrawable(getApplicationContext(), R.drawable.redblue));
                 break;
             case 5:
-                binding.checkboxTopLayout.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.yellowgreenandblue));
+                binding.checkboxTopLayout.setBackground(ContextCompat.
+                        getDrawable(getApplicationContext(), R.drawable.yellowgreenandblue));
                 break;
         }
         String questionNumber = getString(R.string.question_numb_title);
-        questionNumber = String.format(questionNumber, String.valueOf(savedExtra.get("questionPassed")));
+        questionNumber = String.format(questionNumber,
+                String.valueOf(savedExtra.get("questionPassed")));
 
+        binding.questionNumber.setText(questionNumber);
         //Sets question one based on random number. There are five question choices for Q1 & Q2
         //Yes, a switch would have been better. But requirements dictated if/then statement
         switch (Integer.parseInt(String.valueOf(savedExtra.get("questionPassed")))) {
             case 3:
                 if (randomQuestionGenerated == 0) {
-                    binding.questionNumber.setText(questionNumber);
-                    binding.qustionText.setText("Who was the first president of the United States?");
-                    binding.checkboxOne.setText("George Washington");
-                    binding.checkBoxTwo.setText("John Denver");
-                    binding.checkBoxThree.setText("Who know's ");
-                    binding.checkBoxFour.setText("Donald Trump");
+                    binding.qustionText.setText(R.string.cb_q1);
+                    binding.checkboxOne.setText(R.string.cb_q1_a);
+                    binding.checkBoxTwo.setText(R.string.cb_q1_b);
+                    binding.checkBoxThree.setText(R.string.cb_q1_c);
+                    binding.checkBoxFour.setText(R.string.cb_q1_d);
                 } else if (randomQuestionGenerated == 1) {
-                    binding.questionNumber.setText(questionNumber);
-                    binding.qustionText.setText("Who was the second president of the United States?");
-                    binding.checkboxOne.setText("George Washington");
-                    binding.checkBoxTwo.setText("John Denver");
-                    binding.checkBoxThree.setText("Who know's ");
-                    binding.checkBoxFour.setText("Donald Trump");
+                    binding.qustionText.setText(R.string.cb_q2);
+                    binding.checkboxOne.setText(R.string.cb_q2_a);
+                    binding.checkBoxTwo.setText(R.string.cb_q2_b);
+                    binding.checkBoxThree.setText(R.string.cb_q2_c);
+                    binding.checkBoxFour.setText(R.string.cb_q2_d);
                 } else if (randomQuestionGenerated == 2) {
-                    binding.questionNumber.setText(questionNumber);
-                    binding.qustionText.setText("Who was the third president of the United States?");
-                    binding.checkboxOne.setText("George Washington");
-                    binding.checkBoxTwo.setText("John Denver");
-                    binding.checkBoxThree.setText("Who know's ");
-                    binding.checkBoxFour.setText("Donald Trump");
+                    binding.qustionText.setText(R.string.cb_3);
+                    binding.checkboxOne.setText(R.string.cb_q3_a);
+                    binding.checkBoxTwo.setText(R.string.cb_q3_b);
+                    binding.checkBoxThree.setText(R.string.cb_q3_c);
+                    binding.checkBoxFour.setText(R.string.cb_q3_d);
                 } else if (randomQuestionGenerated == 3) {
-                    binding.questionNumber.setText(questionNumber);
-                    binding.qustionText.setText("Who was the fourth president of the United States?");
-                    binding.checkboxOne.setText("George Washington");
-                    binding.checkBoxTwo.setText("John Denver");
-                    binding.checkBoxThree.setText("Who know's ");
-                    binding.checkBoxFour.setText("Donald Trump");
+                    binding.qustionText.setText(R.string.cb_q4);
+                    binding.checkboxOne.setText(R.string.cb_q4_a);
+                    binding.checkBoxTwo.setText(R.string.cb_q4_b);
+                    binding.checkBoxThree.setText(R.string.cb_q4_c);
+                    binding.checkBoxFour.setText(R.string.cb_q4_d);
                 } else {
-                    binding.questionNumber.setText(questionNumber);
-                    binding.qustionText.setText("Who was the current president of the United States?");
-                    binding.checkboxOne.setText("George Washington");
-                    binding.checkBoxTwo.setText("John Denver");
-                    binding.checkBoxThree.setText("Who know's ");
-                    binding.checkBoxFour.setText("Donald Trump");
+                    binding.qustionText.setText(R.string.cb_q5);
+                    binding.checkboxOne.setText(R.string.cb_q5_a);
+                    binding.checkBoxTwo.setText(R.string.cb_q5_b);
+                    binding.checkBoxThree.setText(R.string.cb_q5_c);
+                    binding.checkBoxFour.setText(R.string.cb_q5_d);
                 }
                 break;
 
             case 4:
                 if (randomQuestionGenerated == 0) {
-                    binding.questionNumber.setText(questionNumber);
-                    binding.qustionText.setText("Who was the first VP of the United States?");
-                    binding.checkboxOne.setText("George Washington");
-                    binding.checkBoxTwo.setText("John Denver");
-                    binding.checkBoxThree.setText("Who know's ");
-                    binding.checkBoxFour.setText("Donald Trump");
+                    binding.qustionText.setText(R.string.cb_q6);
+                    binding.checkboxOne.setText(R.string.cb_q6_a);
+                    binding.checkBoxTwo.setText(R.string.cb_q6_b);
+                    binding.checkBoxThree.setText(R.string.cb_q6_c);
+                    binding.checkBoxFour.setText(R.string.cb_q6_d);
                 } else if (randomQuestionGenerated == 1) {
-                    binding.questionNumber.setText(questionNumber);
-                    binding.qustionText.setText("Who was the 2nd VP of the United States?");
-                    binding.checkboxOne.setText("George Washington");
-                    binding.checkBoxTwo.setText("John Denver");
-                    binding.checkBoxThree.setText("Who know's ");
-                    binding.checkBoxFour.setText("Donald Trump");
+                    binding.qustionText.setText(R.string.cb_q7);
+                    binding.checkboxOne.setText(R.string.cb_q7_a);
+                    binding.checkBoxTwo.setText(R.string.cb_q7_b);
+                    binding.checkBoxThree.setText(R.string.cb_q7_c);
+                    binding.checkBoxFour.setText(R.string.cb_q7_d);
                 } else if (randomQuestionGenerated == 2) {
-                    binding.questionNumber.setText(questionNumber);
-                    binding.qustionText.setText("Who was the 3rd VP of the United States?");
-                    binding.checkboxOne.setText("George Washington");
-                    binding.checkBoxTwo.setText("John Denver");
-                    binding.checkBoxThree.setText("Who know's ");
-                    binding.checkBoxFour.setText("Donald Trump");
+                    binding.qustionText.setText(R.string.cb_q8);
+                    binding.checkboxOne.setText(R.string.cb_q8_a);
+                    binding.checkBoxTwo.setText(R.string.cb_q8_b);
+                    binding.checkBoxThree.setText(R.string.cb_q8_c);
+                    binding.checkBoxFour.setText(R.string.cb_q8_d);
                 } else if (randomQuestionGenerated == 3) {
-                    binding.questionNumber.setText(questionNumber);
-                    binding.qustionText.setText("Who was the 4th VP of the United States?");
-                    binding.checkboxOne.setText("George Washington");
-                    binding.checkBoxTwo.setText("John Denver");
-                    binding.checkBoxThree.setText("Who know's ");
-                    binding.checkBoxFour.setText("Donald Trump");
+                    binding.qustionText.setText(R.string.cb_q9);
+                    binding.checkboxOne.setText(R.string.cb_q9_a);
+                    binding.checkBoxTwo.setText(R.string.cb_q9_b);
+                    binding.checkBoxThree.setText(R.string.cb_q9_c);
+                    binding.checkBoxFour.setText(R.string.cb_q9_d);
                 } else {
-                    binding.questionNumber.setText(questionNumber);
-                    binding.qustionText.setText("Who was the 5th VP of the United States?");
-                    binding.checkboxOne.setText("George Washington");
-                    binding.checkBoxTwo.setText("John Denver");
-                    binding.checkBoxThree.setText("Who know's ");
-                    binding.checkBoxFour.setText("Donald Trump");
+                    binding.qustionText.setText(R.string.cb_q10);
+                    binding.checkboxOne.setText(R.string.cb_q10_a);
+                    binding.checkBoxTwo.setText(R.string.cb_q10_b);
+                    binding.checkBoxThree.setText(R.string.cb_q10_c);
+                    binding.checkBoxFour.setText(R.string.cb_q10_d);
                 }
                 break;
         }
@@ -143,13 +140,15 @@ public class CheckboxQuestionActivity extends AppCompatActivity {
         //Nothing selected
         if (!binding.checkboxOne.isChecked() && !binding.checkBoxTwo.isChecked() &&
                 !binding.checkBoxThree.isChecked() && !binding.checkBoxFour.isChecked()) {
-            Toast.makeText(getApplicationContext(), R.string.pick_something_please, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),
+                    R.string.pick_something_please, Toast.LENGTH_SHORT).show();
         }
         //Two items selected
         else if ((binding.checkboxOne.isChecked() && binding.checkBoxTwo.isChecked()) ||
                 (binding.checkBoxThree.isChecked() && binding.checkBoxFour.isChecked()) ||
                 (binding.checkboxOne.isChecked() || binding.checkBoxTwo.isChecked()) &&
                         (binding.checkBoxThree.isChecked() || binding.checkBoxFour.isChecked())) {
+
             ScoreActivity.setAnswerAttempt(onePoint);
 
             //Correct answer
@@ -161,7 +160,8 @@ public class CheckboxQuestionActivity extends AppCompatActivity {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         } else {
-            Toast.makeText(getApplicationContext(), R.string.select_one_more, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), R.string.select_one_more,
+                    Toast.LENGTH_SHORT).show();
         }
     }
 

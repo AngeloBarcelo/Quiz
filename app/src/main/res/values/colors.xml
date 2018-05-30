@@ -5,4 +5,6 @@
     <color name="colorAccent">#FF4081</color>
     <color name="yellow">#FFE358</color>
     <color name="text_blue">#3298F2</color>
+    <color name="score_btn">#ffffff</color>
+    <color name="question_text">#000000</color>
 </resources>

@@ -22,7 +22,7 @@ public class RadioQuestionActivity extends AppCompatActivity {
     int zeroPoints;
     int onePoint = 1;
     int randomBackgroundNumber = (int) (5.0 * Math.random());
-    int randomQuestionGenerated = 0;//(int) (4.0 * Math.random());
+    int randomQuestionGenerated = (int) (4.0 * Math.random());
     RadioBtnLayoutBinding binding;
     ActivityMainBinding mainBinding;
 
@@ -59,6 +59,7 @@ public class RadioQuestionActivity extends AppCompatActivity {
         }
         String questionNumber = getString(R.string.question_numb_title);
         questionNumber = String.format(questionNumber, String.valueOf(savedExtra.get("questionPassed")));
+
 
         //Sets question one based on random number. There are five question choices for Q1 & Q2
         //Yes, a switch would have been better. But requirements dictated if/else statement

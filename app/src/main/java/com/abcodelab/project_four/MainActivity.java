@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
-
 import com.abcodelab.project_four.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,6 +15,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        binding.textTitleBtn1.setText(R.string.text_q1_title);
+        binding.textTitleBtn2.setText(R.string.text_q2_title);
+        binding.textTitleBtn3.setText(R.string.text_q3_title);
+        binding.textTitleBtn4.setText(R.string.text_q4_title);
+        binding.textTitleBtn5.setText(R.string.text_q5_title);
+        binding.textTitleBtn6.setText(R.string.text_q6_title);
+        binding.textTitleScoring.setText(R.string.text_scoring_title);
+        binding.textTitleScoring.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ScoreActivity.class);
+                startActivity(intent);
+                return false;
+            }
+        });
 
         //Sets the progressbar by the total # of questions answered regardless of the question
         switch (ScoreActivity.getAnswerAttempt()) {
@@ -72,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent5);
                 break;
             case R.id.title_btn6:
+            case R.id.text_title_btn6:
                 Intent intent6 = new Intent(getApplicationContext(), TextEntryActivity.class);
                 intent6.putExtra("questionPassed", "6");
                 startActivity(intent6);
@@ -81,13 +96,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void scoreDisplay(View v) {
         String line1 = String.format(getString(R.string.total_score), ScoreActivity.getTotalScore() + "%");
-        String line2 = String.format(getString(R.string.correct_answers), String.valueOf(ScoreActivity.getCorrectAnswer()));
-        String line3 = String.format(getString(R.string.incorrect_answers), String.valueOf(ScoreActivity.getWrongAnswer()));
-        String line4 = String.format(getString(R.string.viewed_questions), String.valueOf(ScoreActivity.getViewedQuestion()));
-        String line5 = String.format(getString(R.string.total_questions), String.valueOf(ScoreActivity.getAnswerAttempt()));
+        String line2 = String.format(getString(R.string.correct_answers),
+                String.valueOf(ScoreActivity.getCorrectAnswer()));
+        String line3 = String.format(getString(R.string.incorrect_answers),
+                String.valueOf(ScoreActivity.getWrongAnswer()));
+        String line4 = String.format(getString(R.string.viewed_questions),
+                String.valueOf(ScoreActivity.getViewedQuestion()));
+        String line5 = String.format(getString(R.string.total_questions),
+                String.valueOf(ScoreActivity.getAnswerAttempt()));
         String line6 = getString(R.string.view_score_screen);
 
-        String outputMessage = line1 + "\n" + line2 + "\n" + line3 + "\n" + line4 + "\n" + line5 + "\n\n" + line6;
+        String outputMessage = line1 + "\n" + line2 + "\n" + line3 + "\n" + line4 + "\n" + line5 +
+                "\n\n" + line6;
         Toast.makeText(getApplicationContext(), outputMessage, Toast.LENGTH_SHORT).show();
     }
 }

@@ -47,11 +47,10 @@
                 app:cardElevation="@dimen/card_elevation">
 
                 <TextView
-                    android:id="@+id/tv1"
+                    android:id="@+id/text_title_btn1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="@string/title_question_1"
                     android:textColor="@color/text_blue"
                     android:textSize="@dimen/text_question_size"
                     app:fontFamily="@font/fredoka_one" />
@@ -68,10 +67,10 @@
                 app:cardElevation="@dimen/card_elevation">
 
                 <TextView
+                    android:id="@+id/text_title_btn2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Question #2"
                     android:textColor="@color/text_blue"
                     android:textSize="@dimen/text_question_size"
                     app:fontFamily="@font/fredoka_one" />
@@ -88,10 +87,10 @@
                 app:cardElevation="@dimen/card_elevation">
 
                 <TextView
+                    android:id="@+id/text_title_btn3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Question #3"
                     android:textColor="@color/text_blue"
                     android:textSize="@dimen/text_question_size"
                     app:fontFamily="@font/fredoka_one" />
@@ -109,10 +108,10 @@
                 app:cardElevation="@dimen/card_elevation">
 
                 <TextView
+                    android:id="@+id/text_title_btn4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Question #4"
                     android:textColor="@color/text_blue"
                     android:textSize="@dimen/text_question_size"
                     app:fontFamily="@font/fredoka_one" />
@@ -129,10 +128,10 @@
                 app:cardElevation="@dimen/card_elevation">
 
                 <TextView
+                    android:id="@+id/text_title_btn5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Question #5"
                     android:textColor="@color/text_blue"
                     android:textSize="@dimen/text_question_size"
                     app:fontFamily="@font/fredoka_one" />
@@ -143,17 +142,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/card_margin"
-                android:onClick="displayScore"
+                android:onClick="questioBtnPressed"
                 app:cardBackgroundColor="@color/yellow"
                 app:cardCornerRadius="@dimen/corner_size"
                 app:cardElevation="@dimen/card_elevation">
 
                 <TextView
+                    android:id="@+id/text_title_btn6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:onClick="questioBtnPressed"
-                    android:text="Question #6"
                     android:textColor="@color/text_blue"
                     android:textSize="@dimen/text_question_size"
                     app:fontFamily="@font/fredoka_one" />
@@ -163,18 +162,18 @@
                 android:id="@+id/scoring"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
+                android:layout_margin="@dimen/card_margin"
                 android:onClick="scoreDisplay"
-                app:cardBackgroundColor="#FFE358"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="0dp">
+                app:cardBackgroundColor="@color/yellow"
+                app:cardCornerRadius="@dimen/corner_size"
+                app:cardElevation="@dimen/card_elevation">
 
                 <TextView
+                    android:id="@+id/text_title_scoring"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:onClick="scoreDisplay"
-                    android:text="Get current score"
                     android:textColor="@color/text_blue"
                     android:textSize="@dimen/text_question_size"
                     app:fontFamily="@font/fredoka_one" />
