@@ -15,18 +15,21 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.abcodelab.project_four.databinding.CheckboxLayoutBinding;
+import com.abcodelab.project_four.databinding.ActivityMainBinding;
 
 public class CheckboxQuestionActivity extends AppCompatActivity {
     int onePoint = 1;
     int randomBackgroundNumber = (int) (5.0 * Math.random());
     int randomQuestionGenerated = (int) (4.0 * Math.random());
     CheckboxLayoutBinding binding;
+    ActivityMainBinding activityMainBinding;
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.checkbox_layout);
+
         Bundle savedExtra = getIntent().getExtras();
         ScoreActivity.setViewedQuestion(onePoint);
 
@@ -157,6 +160,12 @@ public class CheckboxQuestionActivity extends AppCompatActivity {
             } else {
                 ScoreActivity.setWrongAnswer(onePoint);
             }
+            activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+            activityMainBinding.titleBtn1.setEnabled(false);
+            activityMainBinding.titleBtn1.setActivated(false);
+            activityMainBinding.titleBtn1.setOnClickListener(null);
+           // activityMainBinding.titleBtn1.clearFocus();
+
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         } else {

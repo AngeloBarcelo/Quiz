@@ -56,8 +56,10 @@ public class ScoreActivity extends AppCompatActivity {
     }
 
     public static double getTotalScore() {
-        double ts = (double) getCorrectAnswer() / getAnswerAttempt() * 100.00;
-        return ts;
+        double ts;
+        if (getCorrectAnswer()>=1){return ts = (double) (getCorrectAnswer() / getAnswerAttempt()) * 100.00;
+            }
+            else{return ts = 0;}
     }
 
     @Override
@@ -70,7 +72,7 @@ public class ScoreActivity extends AppCompatActivity {
         binding.correctNumb.setText(String.valueOf(getCorrectAnswer()));
         binding.timesViewed.setText("Times viewed the Questions: ");
         binding.timesViewedNumb.setText(String.valueOf(getViewedQuestion()));
-        binding.wrongAnswers.setText("Incorrect Answers: ");
+        binding.wrongAnswers.setText("Incorrect Attempts: ");
         binding.wrongAnswerNumb.setText(String.valueOf(getWrongAnswer()));
         binding.questAnswered.setText("Questions Answered: ");
         binding.questAnsweredNumb.setText(String.valueOf(getAnswerAttempt()));
