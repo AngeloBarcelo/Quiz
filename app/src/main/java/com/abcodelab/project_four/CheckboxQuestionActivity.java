@@ -11,11 +11,12 @@ import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import com.abcodelab.project_four.databinding.CheckboxLayoutBinding;
 import com.abcodelab.project_four.databinding.ActivityMainBinding;
+import com.abcodelab.project_four.databinding.CheckboxLayoutBinding;
 
 public class CheckboxQuestionActivity extends AppCompatActivity {
     int onePoint = 1;
@@ -23,14 +24,14 @@ public class CheckboxQuestionActivity extends AppCompatActivity {
     int randomQuestionGenerated = (int) (4.0 * Math.random());
     CheckboxLayoutBinding binding;
     ActivityMainBinding activityMainBinding;
+    Bundle savedExtra;
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.checkbox_layout);
-
-        Bundle savedExtra = getIntent().getExtras();
+        savedExtra = getIntent().getExtras();
         ScoreActivity.setViewedQuestion(onePoint);
 
         //Sets background image
@@ -151,7 +152,6 @@ public class CheckboxQuestionActivity extends AppCompatActivity {
                 (binding.checkBoxThree.isChecked() && binding.checkBoxFour.isChecked()) ||
                 (binding.checkboxOne.isChecked() || binding.checkBoxTwo.isChecked()) &&
                         (binding.checkBoxThree.isChecked() || binding.checkBoxFour.isChecked())) {
-
             ScoreActivity.setAnswerAttempt(onePoint);
 
             //Correct answer
@@ -160,22 +160,23 @@ public class CheckboxQuestionActivity extends AppCompatActivity {
             } else {
                 ScoreActivity.setWrongAnswer(onePoint);
             }
-            activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-            activityMainBinding.titleBtn1.setEnabled(false);
-            activityMainBinding.titleBtn1.setActivated(false);
-            activityMainBinding.titleBtn1.setOnClickListener(null);
-           // activityMainBinding.titleBtn1.clearFocus();
+            String questionNumber = getString(R.string.question_numb_title);
+            questionNumber = String.format(questionNumber, String.valueOf(savedExtra.get("questionPassed")));
+            Log.i("Q1 Answered", String.valueOf(savedExtra.get("questionPassed")));
 
+            if (Integer.parseInt(String.valueOf(savedExtra.get("questionPassed"))) == 3) {
+                MainActivity.q3Answered = true;
+                Log.i("Q1 Got it ", String.valueOf(MainActivity.q3Answered));
+
+            } else if (Integer.parseInt(String.valueOf(savedExtra.get("questionPassed"))) == 4) {
+                MainActivity.q4Answered = true;
+                Log.i("Q1 Got it ", String.valueOf(MainActivity.q4Answered));
+            }
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         } else {
             Toast.makeText(getApplicationContext(), R.string.select_one_more,
                     Toast.LENGTH_SHORT).show();
         }
-    }
-
-    public void results(View v) {
-        Intent intent = new Intent(this, ScoreActivity.class);
-        startActivity(intent);
     }
 }

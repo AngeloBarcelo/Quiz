@@ -148,6 +148,14 @@ public class TextEntryActivity extends AppCompatActivity {
                 ScoreActivity.setWrongAnswer(onePoint);
             }
 
+            Bundle savedExtra = getIntent().getExtras();
+            String questionNumber = getString(R.string.question_numb_title);
+            questionNumber = String.format(questionNumber, String.valueOf(savedExtra.get("questionPassed")));
+            if (Integer.parseInt(String.valueOf(savedExtra.get("questionPassed"))) == 1) {
+                MainActivity.q1Answered = true;
+            } else if (Integer.parseInt(String.valueOf(savedExtra.get("questionPassed"))) == 2) {
+                MainActivity.q2Answered = true;
+            }
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }

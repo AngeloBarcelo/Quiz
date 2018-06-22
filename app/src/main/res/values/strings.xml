@@ -92,4 +92,5 @@
     <string name="tq_q8_answer">i</string>
     <string name="tq_q9_answer">m</string>
     <string name="tq_q10_answer">g</string>
+    <string name="answered_already">You have already answered this question. Please select another questions</string>
 </resources>

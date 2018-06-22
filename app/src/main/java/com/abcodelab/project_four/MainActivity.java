@@ -6,10 +6,17 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
+
 import com.abcodelab.project_four.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
+    static boolean q1Answered = false;
+    static boolean q2Answered = false;
+    static boolean q3Answered = false;
+    static boolean q4Answered = false;
+    static boolean q5Answered = false;
+    static boolean q6Answered = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,26 +39,27 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //Sets the progressbar by the total # of questions answered regardless of the question
+        if(MainActivity.q1Answered==true ||MainActivity.q2Answered==true||MainActivity.q3Answered==true||MainActivity.q4Answered==true||MainActivity.q5Answered==true||MainActivity.q6Answered==true)
         switch (ScoreActivity.getAnswerAttempt()) {
             case 0:
-                binding.progressBar.setProgress(0);
+                binding.progressBar.setProgress(binding.progressBar.getProgress()+17);
                 break;
             case 1:
-                binding.progressBar.setProgress(17);
+                binding.progressBar.setProgress(binding.progressBar.getProgress()+17);
                 break;
             case 2:
-                binding.progressBar.setProgress(34);
+                binding.progressBar.setProgress(binding.progressBar.getProgress()+17);
                 break;
             case 3:
-                binding.progressBar.setProgress(51);
+                binding.progressBar.setProgress(binding.progressBar.getProgress()+17);
             case 4:
-                binding.progressBar.setProgress(68);
+                binding.progressBar.setProgress(binding.progressBar.getProgress()+17);
                 break;
             case 5:
-                binding.progressBar.setProgress(85);
+                binding.progressBar.setProgress(binding.progressBar.getProgress()+17);
                 break;
             default:
-                binding.progressBar.setProgress(100);
+                binding.progressBar.setProgress(binding.progressBar.getProgress()+17);
         }
     }
 
@@ -60,36 +68,71 @@ public class MainActivity extends AppCompatActivity {
     public void questioBtnPressed(View v) {
         int received_ID = v.getId();
         switch (received_ID) {
+
             case R.id.title_btn1:
-                Intent intent1 = new Intent(getApplicationContext(), RadioQuestionActivity.class);
-                intent1.putExtra("questionPassed", 1);
-                startActivity(intent1);
+                if (MainActivity.q1Answered == false) {
+                    Intent intent1 = new Intent(getApplicationContext(), RadioQuestionActivity.class);
+                    intent1.putExtra("questionPassed", "1");
+                    startActivity(intent1);
+                } else {
+                    binding.textTitleBtn1.setText("Answered");
+                    Toast.makeText(getApplicationContext(), getString(R.string.answered_already), Toast.LENGTH_SHORT).show();
+                }
                 break;
+            case R.id.text_title_btn2:
             case R.id.title_btn2:
-                Intent intent2 = new Intent(getApplicationContext(), RadioQuestionActivity.class);
-                intent2.putExtra("questionPassed", "2");
-                startActivity(intent2);
+                if (MainActivity.q2Answered == false) {
+                    Intent intent2 = new Intent(getApplicationContext(), RadioQuestionActivity.class);
+                    intent2.putExtra("questionPassed", "2");
+                    startActivity(intent2);
+                } else {
+                    binding.textTitleBtn2.setText("Answered");
+                    Toast.makeText(getApplicationContext(), getString(R.string.answered_already), Toast.LENGTH_SHORT).show();
+                }
                 break;
+            case R.id.text_title_btn3:
             case R.id.title_btn3:
-                Intent intent3 = new Intent(getApplicationContext(), CheckboxQuestionActivity.class);
-                intent3.putExtra("questionPassed", "3");
-                startActivity(intent3);
+                if (MainActivity.q3Answered == false) {
+                    Intent intent3 = new Intent(getApplicationContext(), CheckboxQuestionActivity.class);
+                    intent3.putExtra("questionPassed", "3");
+                    startActivity(intent3);
+                } else {
+                    binding.textTitleBtn3.setText("Answered");
+                    Toast.makeText(getApplicationContext(), getString(R.string.answered_already), Toast.LENGTH_SHORT).show();
+                }
                 break;
+            case R.id.text_title_btn4:
             case R.id.title_btn4:
-                Intent intent4 = new Intent(getApplicationContext(), CheckboxQuestionActivity.class);
-                intent4.putExtra("questionPassed", "4");
-                startActivity(intent4);
+                if (MainActivity.q4Answered == false) {
+                    Intent intent4 = new Intent(getApplicationContext(), CheckboxQuestionActivity.class);
+                    intent4.putExtra("questionPassed", "4");
+                    startActivity(intent4);
+                } else {
+                    binding.textTitleBtn4.setText("Answered");
+                    Toast.makeText(getApplicationContext(), getString(R.string.answered_already), Toast.LENGTH_SHORT).show();
+                }
                 break;
+            case R.id.text_title_btn5:
             case R.id.title_btn5:
-                Intent intent5 = new Intent(getApplicationContext(), TextEntryActivity.class);
-                intent5.putExtra("questionPassed", "5");
-                startActivity(intent5);
+                if (MainActivity.q5Answered == false) {
+                    Intent intent5 = new Intent(getApplicationContext(), TextEntryActivity.class);
+                    intent5.putExtra("questionPassed", "5");
+                    startActivity(intent5);
+                } else {
+                    binding.textTitleBtn5.setText("Answered");
+                    Toast.makeText(getApplicationContext(), getString(R.string.answered_already), Toast.LENGTH_SHORT).show();
+                }
                 break;
             case R.id.title_btn6:
             case R.id.text_title_btn6:
-                Intent intent6 = new Intent(getApplicationContext(), TextEntryActivity.class);
-                intent6.putExtra("questionPassed", "6");
-                startActivity(intent6);
+                if (MainActivity.q6Answered == false) {
+                    Intent intent6 = new Intent(getApplicationContext(), TextEntryActivity.class);
+                    intent6.putExtra("questionPassed", "6");
+                    startActivity(intent6);
+                } else {
+                    binding.textTitleBtn6.setText("Answered");
+                    Toast.makeText(getApplicationContext(), getString(R.string.answered_already), Toast.LENGTH_SHORT).show();
+                }
                 break;
         }
     }

@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -26,14 +27,13 @@ public class RadioQuestionActivity extends AppCompatActivity {
     RadioBtnLayoutBinding binding;
     ActivityMainBinding mainBinding;
 
+
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.radio_btn_layout);
-
         Bundle savedExtra = getIntent().getExtras();
-
         ScoreActivity.setViewedQuestion(onePoint);
 
         //Sets background image
@@ -148,6 +148,10 @@ public class RadioQuestionActivity extends AppCompatActivity {
     }
 
     public void submitRadioAnswers(View v) {
+        Bundle savedExtra = getIntent().getExtras();
+        String questionNumber = getString(R.string.question_numb_title);
+        questionNumber = String.format(questionNumber, String.valueOf(savedExtra.get("questionPassed")));
+
         if (!binding.answerOne.isChecked() && !binding.answerTwo.isChecked() &&
                 !binding.answerThree.isChecked() && !binding.answerFour.isChecked()) {
             Toast.makeText(getApplicationContext(), R.string.pick_something_please, Toast.LENGTH_SHORT).show();
@@ -160,6 +164,12 @@ public class RadioQuestionActivity extends AppCompatActivity {
                 ScoreActivity.setCorrectAnswer(onePoint);
             } else {
                 ScoreActivity.setWrongAnswer(onePoint);
+            }
+
+            if (Integer.parseInt(String.valueOf(savedExtra.get("questionPassed"))) == 1) {
+                MainActivity.q1Answered = true;
+            } else if (Integer.parseInt(String.valueOf(savedExtra.get("questionPassed"))) == 2) {
+                MainActivity.q2Answered = true;
             }
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
