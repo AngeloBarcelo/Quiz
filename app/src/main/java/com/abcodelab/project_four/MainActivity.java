@@ -39,28 +39,28 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //Sets the progressbar by the total # of questions answered regardless of the question
-        if(MainActivity.q1Answered==true ||MainActivity.q2Answered==true||MainActivity.q3Answered==true||MainActivity.q4Answered==true||MainActivity.q5Answered==true||MainActivity.q6Answered==true)
-        switch (ScoreActivity.getAnswerAttempt()) {
-            case 0:
-                binding.progressBar.setProgress(binding.progressBar.getProgress()+17);
-                break;
-            case 1:
-                binding.progressBar.setProgress(binding.progressBar.getProgress()+17);
-                break;
-            case 2:
-                binding.progressBar.setProgress(binding.progressBar.getProgress()+17);
-                break;
-            case 3:
-                binding.progressBar.setProgress(binding.progressBar.getProgress()+17);
-            case 4:
-                binding.progressBar.setProgress(binding.progressBar.getProgress()+17);
-                break;
-            case 5:
-                binding.progressBar.setProgress(binding.progressBar.getProgress()+17);
-                break;
-            default:
-                binding.progressBar.setProgress(binding.progressBar.getProgress()+17);
-        }
+        if (MainActivity.q1Answered == true || MainActivity.q2Answered == true || MainActivity.q3Answered == true || MainActivity.q4Answered == true || MainActivity.q5Answered == true || MainActivity.q6Answered == true)
+            switch (ScoreActivity.answerAttempt) {
+                case 0:
+                    binding.progressBar.setProgress(0);
+                    break;
+                case 1:
+                    binding.progressBar.setProgress(17);
+                    break;
+                case 2:
+                    binding.progressBar.setProgress(34);
+                    break;
+                case 3:
+                    binding.progressBar.setProgress(51);
+                case 4:
+                    binding.progressBar.setProgress(68);
+                    break;
+                case 5:
+                    binding.progressBar.setProgress(85);
+                    break;
+                default:
+                    binding.progressBar.setProgress(100);
+            }
     }
 
     //Nothing gets returned. Just intents to start the other activities.
@@ -68,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
     public void questioBtnPressed(View v) {
         int received_ID = v.getId();
         switch (received_ID) {
-
             case R.id.title_btn1:
                 if (MainActivity.q1Answered == false) {
                     Intent intent1 = new Intent(getApplicationContext(), RadioQuestionActivity.class);
@@ -137,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //Formatting for score toast
     public void scoreDisplay(View v) {
         String line1 = String.format(getString(R.string.total_score), ScoreActivity.getTotalScore() + "%");
         String line2 = String.format(getString(R.string.correct_answers),

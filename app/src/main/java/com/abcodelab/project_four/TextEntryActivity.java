@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 import com.abcodelab.project_four.databinding.TextEntryActivityBinding;
@@ -151,10 +152,11 @@ public class TextEntryActivity extends AppCompatActivity {
             Bundle savedExtra = getIntent().getExtras();
             String questionNumber = getString(R.string.question_numb_title);
             questionNumber = String.format(questionNumber, String.valueOf(savedExtra.get("questionPassed")));
-            if (Integer.parseInt(String.valueOf(savedExtra.get("questionPassed"))) == 1) {
-                MainActivity.q1Answered = true;
-            } else if (Integer.parseInt(String.valueOf(savedExtra.get("questionPassed"))) == 2) {
-                MainActivity.q2Answered = true;
+            if (Integer.parseInt(String.valueOf(savedExtra.get("questionPassed"))) == 5) {
+                MainActivity.q5Answered = true;
+            }
+            else if (Integer.parseInt(String.valueOf(savedExtra.get("questionPassed"))) == 6) {
+                MainActivity.q6Answered = true;
             }
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);

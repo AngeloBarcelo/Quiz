@@ -93,4 +93,23 @@
     <string name="tq_q9_answer">m</string>
     <string name="tq_q10_answer">g</string>
     <string name="answered_already">You have already answered this question. Please select another questions</string>
+    <string name="rb_q1">Who was the first president of the United States?</string>
+    <string name="rb_q2">Who was the second president of the United States?</string>
+    <string name="rb_q3">Who was the third president of the United States?</string>
+    <string name="rb_q4">Who was the fourth president of the United States?</string>
+    <string name="rb_q5">Who was the current president of the United States?</string>
+    <string name="rb_q6">Who was the first VP of the United States?</string>
+    <string name="rb_q7">Who was the second VP of the United States?</string>
+    <string name="rb_q8">Who was the third VP of the United States?</string>
+    <string name="rb_q9">Who was the fourth VP of the United States?</string>
+    <string name="rb_q10">Who was the current VP of the United States?</string>
+    <string name="rb_q1_a1">George Washington</string>
+    <string name="rb_q1_a2">John Adams</string>
+    <string name="rb_q1_a3">Thomas Jefferson</string>
+    <string name="rb_q1_a4">James Madison</string>
+    <string name="rb_q6_a1">John Adams</string>
+    <string name="rb_q7_a1">Thomas Jefferson</string>
+    <string name="rb_q8_a1">Aaron Burr</string>
+    <string name="rb_q9_a1">George Clinton</string>
+    <string name="rb_q10_a1">Elbridge Gerry</string>
 </resources>

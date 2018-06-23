@@ -20,14 +20,11 @@ import com.abcodelab.project_four.databinding.RadioBtnLayoutBinding;
 import com.abcodelab.project_four.databinding.ActivityMainBinding;
 
 public class RadioQuestionActivity extends AppCompatActivity {
-    int zeroPoints;
     int onePoint = 1;
     int randomBackgroundNumber = (int) (5.0 * Math.random());
     int randomQuestionGenerated = (int) (4.0 * Math.random());
     RadioBtnLayoutBinding binding;
-    ActivityMainBinding mainBinding;
-
-
+    
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,39 +66,39 @@ public class RadioQuestionActivity extends AppCompatActivity {
             case 1:
                 if (randomQuestionGenerated == 0) {
                     binding.questionNumber.setText(questionNumber);
-                    binding.question.setText("Who was the first president of the United States?");
-                    binding.answerOne.setText("George Washington");
-                    binding.answerTwo.setText("John Denver");
-                    binding.answerThree.setText("Who know's ");
-                    binding.answerFour.setText("Donald Trump");
+                    binding.question.setText(R.string.rb_q1);
+                    binding.answerOne.setText(R.string.rb_q1_a1);
+                    binding.answerTwo.setText(R.string.rb_q1_a2);
+                    binding.answerThree.setText(R.string.rb_q1_a3);
+                    binding.answerFour.setText(R.string.rb_q1_a4);
                 } else if (randomQuestionGenerated == 1) {
                     binding.questionNumber.setText(questionNumber);
-                    binding.question.setText("Who was the second president of the United States?");
-                    binding.answerOne.setText("George Washington");
-                    binding.answerTwo.setText("John Denver");
-                    binding.answerThree.setText("Who know's ");
-                    binding.answerFour.setText("Donald Trump");
+                    binding.question.setText(R.string.rb_q2);
+                    binding.answerOne.setText(R.string.rb_q1_a2);
+                    binding.answerTwo.setText(R.string.rb_q1_a4);
+                    binding.answerThree.setText(R.string.rb_q1_a3);
+                    binding.answerFour.setText(R.string.rb_q1_a1);
                 } else if (randomQuestionGenerated == 2) {
                     binding.questionNumber.setText(questionNumber);
-                    binding.question.setText("Who was the third president of the United States?");
-                    binding.answerOne.setText("George Washington");
-                    binding.answerTwo.setText("John Denver");
-                    binding.answerThree.setText("Who know's ");
-                    binding.answerFour.setText("Donald Trump");
+                    binding.question.setText(R.string.rb_q3);
+                    binding.answerOne.setText(R.string.rb_q1_a3);
+                    binding.answerTwo.setText(R.string.rb_q1_a2);
+                    binding.answerThree.setText(R.string.rb_q1_a1);
+                    binding.answerFour.setText(R.string.rb_q1_a4);
                 } else if (randomQuestionGenerated == 3) {
                     binding.questionNumber.setText(questionNumber);
-                    binding.question.setText("Who was the fourth president of the United States?");
-                    binding.answerOne.setText("George Washington");
-                    binding.answerTwo.setText("John Denver");
-                    binding.answerThree.setText("Who know's ");
-                    binding.answerFour.setText("Donald Trump");
+                    binding.question.setText(R.string.rb_q4);
+                    binding.answerOne.setText(R.string.rb_q1_a4);
+                    binding.answerTwo.setText(R.string.rb_q1_a1);
+                    binding.answerThree.setText(R.string.rb_q1_a2);
+                    binding.answerFour.setText(R.string.rb_q1_a3);
                 } else {
                     binding.questionNumber.setText(questionNumber);
-                    binding.question.setText("Who was the current president of the United States?");
-                    binding.answerOne.setText("George Washington");
-                    binding.answerTwo.setText("John Denver");
-                    binding.answerThree.setText("Who know's ");
-                    binding.answerFour.setText("Donald Trump");
+                    binding.question.setText(R.string.rb_q5);
+                    binding.answerOne.setText(R.string.rb_q1_a4);
+                    binding.answerTwo.setText(R.string.rb_q1_a3);
+                    binding.answerThree.setText(R.string.rb_q1_a1);
+                    binding.answerFour.setText(R.string.rb_q1_a2);
                 }
                 break;
 
@@ -109,39 +106,39 @@ public class RadioQuestionActivity extends AppCompatActivity {
             case 2:
                 if (randomQuestionGenerated == 0) {
                     binding.questionNumber.setText(questionNumber);
-                    binding.question.setText("Who was the first VP of the United States?");
-                    binding.answerOne.setText("George Washington");
-                    binding.answerTwo.setText("John Denver");
-                    binding.answerThree.setText("Who know's ");
-                    binding.answerFour.setText("Donald Trump");
+                    binding.question.setText(R.string.rb_q6);
+                    binding.answerOne.setText(R.string.rb_q6_a1);
+                    binding.answerTwo.setText(R.string.rb_q8_a1);
+                    binding.answerThree.setText(R.string.rb_q7_a1);
+                    binding.answerFour.setText(R.string.rb_q10_a1);
                 } else if (randomQuestionGenerated == 1) {
                     binding.questionNumber.setText(questionNumber);
-                    binding.question.setText("Who was the second VP of the United States?");
-                    binding.answerOne.setText("George Washington");
-                    binding.answerTwo.setText("John Denver");
-                    binding.answerThree.setText("Who know's ");
-                    binding.answerFour.setText("Donald Trump");
+                    binding.question.setText(R.string.rb_q7);
+                    binding.answerOne.setText(R.string.rb_q7_a1);
+                    binding.answerTwo.setText(R.string.rb_q6_a1);
+                    binding.answerThree.setText(R.string.rb_q8_a1);
+                    binding.answerFour.setText(R.string.rb_q10_a1);
                 } else if (randomQuestionGenerated == 2) {
                     binding.questionNumber.setText(questionNumber);
-                    binding.question.setText("Who was the third VP of the United States?");
-                    binding.answerOne.setText("George Washington");
-                    binding.answerTwo.setText("John Denver");
-                    binding.answerThree.setText("Who know's ");
-                    binding.answerFour.setText("Donald Trump");
+                    binding.question.setText(R.string.rb_q8);
+                    binding.answerOne.setText(R.string.rb_q8_a1);
+                    binding.answerTwo.setText(R.string.rb_q7_a1);
+                    binding.answerThree.setText(R.string.rb_q6_a1);
+                    binding.answerFour.setText(R.string.rb_q10_a1);
                 } else if (randomQuestionGenerated == 3) {
                     binding.questionNumber.setText(questionNumber);
-                    binding.question.setText("Who was the fourth VP of the United States?");
-                    binding.answerOne.setText("George Washington");
-                    binding.answerTwo.setText("John Denver");
-                    binding.answerThree.setText("Who know's ");
-                    binding.answerFour.setText("Donald Trump");
+                    binding.question.setText(R.string.rb_q9);
+                    binding.answerOne.setText(R.string.rb_q9_a1);
+                    binding.answerTwo.setText(R.string.rb_q7_a1);
+                    binding.answerThree.setText(R.string.rb_q8_a1);
+                    binding.answerFour.setText(R.string.rb_q6_a1);
                 } else {
                     binding.questionNumber.setText(questionNumber);
-                    binding.question.setText("Who was the current VP of the United States?");
-                    binding.answerOne.setText("George Washington");
-                    binding.answerTwo.setText("John Denver");
-                    binding.answerThree.setText("Who know's ");
-                    binding.answerFour.setText("Donald Trump");
+                    binding.question.setText(R.string.rb_q10);
+                    binding.answerOne.setText(R.string.rb_q10_a1);
+                    binding.answerTwo.setText(R.string.rb_q8_a1);
+                    binding.answerThree.setText(R.string.rb_q6_a1);
+                    binding.answerFour.setText(R.string.rb_q7_a1);
                 }
                 break;
         }
@@ -156,7 +153,7 @@ public class RadioQuestionActivity extends AppCompatActivity {
                 !binding.answerThree.isChecked() && !binding.answerFour.isChecked()) {
             Toast.makeText(getApplicationContext(), R.string.pick_something_please, Toast.LENGTH_SHORT).show();
         } else {
-            int receivedView = v.getId();
+            //int receivedView = v.getId();
             ScoreActivity.setAnswerAttempt(onePoint);
 
             //This is the correct answer for Q1 &Q2

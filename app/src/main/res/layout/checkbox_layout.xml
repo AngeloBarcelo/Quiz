@@ -31,7 +31,7 @@
             android:textSize="@dimen/text_question_size" />
 
         <TextView
-            android:id="@+id/qustion_text"
+            android:id="@+id/cb_question_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/question_number"
@@ -45,12 +45,12 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/qustion_text"
+            android:layout_below="@+id/cb_question_text"
             android:layout_centerHorizontal="true"
             android:orientation="vertical">
 
             <CheckBox
-                android:id="@+id/checkbox_one"
+                android:id="@+id/cb_answer1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/qustion_text"
@@ -62,7 +62,7 @@
                 tools:layout_editor_absoluteY="173dp" />
 
             <CheckBox
-                android:id="@+id/checkBox_two"
+                android:id="@+id/cb_answer2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/checkbox_one"
@@ -74,7 +74,7 @@
                 tools:layout_editor_absoluteY="202dp" />
 
             <CheckBox
-                android:id="@+id/checkBox_three"
+                android:id="@+id/cb_answer3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
@@ -83,7 +83,7 @@
                 android:textSize="@dimen/text_question_size" />
 
             <CheckBox
-                android:id="@+id/checkBox_four"
+                android:id="@+id/cb_answer4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -97,7 +97,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/btn_submit"
+            android:id="@+id/cb_btn_submit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

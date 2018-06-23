@@ -3,6 +3,7 @@ package com.abcodelab.project_four;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
 import com.abcodelab.project_four.databinding.ActivityScoreBinding;
 
 public class ScoreActivity extends AppCompatActivity {
@@ -56,10 +57,11 @@ public class ScoreActivity extends AppCompatActivity {
     }
 
     public static double getTotalScore() {
-        double ts;
-        if (getCorrectAnswer()>=1){return ts = (double) (getCorrectAnswer() / getAnswerAttempt()) * 100.00;
-            }
-            else{return ts = 0;}
+        if (getCorrectAnswer() >= 1) {
+            return (double) (getCorrectAnswer() / 6) * 100.00;
+        } else {
+            return 0;
+        }
     }
 
     @Override
