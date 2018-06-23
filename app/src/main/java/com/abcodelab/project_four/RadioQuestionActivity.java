@@ -24,7 +24,7 @@ public class RadioQuestionActivity extends AppCompatActivity {
     int randomBackgroundNumber = (int) (5.0 * Math.random());
     int randomQuestionGenerated = (int) (4.0 * Math.random());
     RadioBtnLayoutBinding binding;
-    
+
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,38 +67,39 @@ public class RadioQuestionActivity extends AppCompatActivity {
                 if (randomQuestionGenerated == 0) {
                     binding.questionNumber.setText(questionNumber);
                     binding.question.setText(R.string.rb_q1);
-                    binding.answerOne.setText(R.string.rb_q1_a1);
-                    binding.answerTwo.setText(R.string.rb_q1_a2);
-                    binding.answerThree.setText(R.string.rb_q1_a3);
-                    binding.answerFour.setText(R.string.rb_q1_a4);
+
+                    binding.rbAnswerOne.setText(R.string.rb_q1_a1);
+                    binding.rbAnswerTwo.setText(R.string.rb_q1_a2);
+                    binding.rbAnswerThree.setText(R.string.rb_q1_a3);
+                    binding.rbAnswerFour.setText(R.string.rb_q1_a4);
                 } else if (randomQuestionGenerated == 1) {
                     binding.questionNumber.setText(questionNumber);
                     binding.question.setText(R.string.rb_q2);
-                    binding.answerOne.setText(R.string.rb_q1_a2);
-                    binding.answerTwo.setText(R.string.rb_q1_a4);
-                    binding.answerThree.setText(R.string.rb_q1_a3);
-                    binding.answerFour.setText(R.string.rb_q1_a1);
+                    binding.rbAnswerOne.setText(R.string.rb_q1_a2);
+                    binding.rbAnswerTwo.setText(R.string.rb_q1_a4);
+                    binding.rbAnswerThree.setText(R.string.rb_q1_a3);
+                    binding.rbAnswerFour.setText(R.string.rb_q1_a1);
                 } else if (randomQuestionGenerated == 2) {
                     binding.questionNumber.setText(questionNumber);
                     binding.question.setText(R.string.rb_q3);
-                    binding.answerOne.setText(R.string.rb_q1_a3);
-                    binding.answerTwo.setText(R.string.rb_q1_a2);
-                    binding.answerThree.setText(R.string.rb_q1_a1);
-                    binding.answerFour.setText(R.string.rb_q1_a4);
+                    binding.rbAnswerOne.setText(R.string.rb_q1_a3);
+                    binding.rbAnswerTwo.setText(R.string.rb_q1_a2);
+                    binding.rbAnswerThree.setText(R.string.rb_q1_a1);
+                    binding.rbAnswerFour.setText(R.string.rb_q1_a4);
                 } else if (randomQuestionGenerated == 3) {
                     binding.questionNumber.setText(questionNumber);
                     binding.question.setText(R.string.rb_q4);
-                    binding.answerOne.setText(R.string.rb_q1_a4);
-                    binding.answerTwo.setText(R.string.rb_q1_a1);
-                    binding.answerThree.setText(R.string.rb_q1_a2);
-                    binding.answerFour.setText(R.string.rb_q1_a3);
+                    binding.rbAnswerOne.setText(R.string.rb_q1_a4);
+                    binding.rbAnswerTwo.setText(R.string.rb_q1_a1);
+                    binding.rbAnswerThree.setText(R.string.rb_q1_a2);
+                    binding.rbAnswerFour.setText(R.string.rb_q1_a3);
                 } else {
                     binding.questionNumber.setText(questionNumber);
                     binding.question.setText(R.string.rb_q5);
-                    binding.answerOne.setText(R.string.rb_q1_a4);
-                    binding.answerTwo.setText(R.string.rb_q1_a3);
-                    binding.answerThree.setText(R.string.rb_q1_a1);
-                    binding.answerFour.setText(R.string.rb_q1_a2);
+                    binding.rbAnswerOne.setText(R.string.rb_q1_a4);
+                    binding.rbAnswerTwo.setText(R.string.rb_q1_a3);
+                    binding.rbAnswerThree.setText(R.string.rb_q1_a1);
+                    binding.rbAnswerFour.setText(R.string.rb_q1_a2);
                 }
                 break;
 
@@ -107,38 +108,38 @@ public class RadioQuestionActivity extends AppCompatActivity {
                 if (randomQuestionGenerated == 0) {
                     binding.questionNumber.setText(questionNumber);
                     binding.question.setText(R.string.rb_q6);
-                    binding.answerOne.setText(R.string.rb_q6_a1);
-                    binding.answerTwo.setText(R.string.rb_q8_a1);
-                    binding.answerThree.setText(R.string.rb_q7_a1);
-                    binding.answerFour.setText(R.string.rb_q10_a1);
+                    binding.rbAnswerOne.setText(R.string.rb_q6_a1);
+                    binding.rbAnswerTwo.setText(R.string.rb_q8_a1);
+                    binding.rbAnswerThree.setText(R.string.rb_q7_a1);
+                    binding.rbAnswerFour.setText(R.string.rb_q10_a1);
                 } else if (randomQuestionGenerated == 1) {
                     binding.questionNumber.setText(questionNumber);
                     binding.question.setText(R.string.rb_q7);
-                    binding.answerOne.setText(R.string.rb_q7_a1);
-                    binding.answerTwo.setText(R.string.rb_q6_a1);
-                    binding.answerThree.setText(R.string.rb_q8_a1);
-                    binding.answerFour.setText(R.string.rb_q10_a1);
+                    binding.rbAnswerOne.setText(R.string.rb_q7_a1);
+                    binding.rbAnswerTwo.setText(R.string.rb_q6_a1);
+                    binding.rbAnswerThree.setText(R.string.rb_q8_a1);
+                    binding.rbAnswerFour.setText(R.string.rb_q10_a1);
                 } else if (randomQuestionGenerated == 2) {
                     binding.questionNumber.setText(questionNumber);
                     binding.question.setText(R.string.rb_q8);
-                    binding.answerOne.setText(R.string.rb_q8_a1);
-                    binding.answerTwo.setText(R.string.rb_q7_a1);
-                    binding.answerThree.setText(R.string.rb_q6_a1);
-                    binding.answerFour.setText(R.string.rb_q10_a1);
+                    binding.rbAnswerOne.setText(R.string.rb_q8_a1);
+                    binding.rbAnswerTwo.setText(R.string.rb_q7_a1);
+                    binding.rbAnswerThree.setText(R.string.rb_q6_a1);
+                    binding.rbAnswerFour.setText(R.string.rb_q10_a1);
                 } else if (randomQuestionGenerated == 3) {
                     binding.questionNumber.setText(questionNumber);
                     binding.question.setText(R.string.rb_q9);
-                    binding.answerOne.setText(R.string.rb_q9_a1);
-                    binding.answerTwo.setText(R.string.rb_q7_a1);
-                    binding.answerThree.setText(R.string.rb_q8_a1);
-                    binding.answerFour.setText(R.string.rb_q6_a1);
+                    binding.rbAnswerOne.setText(R.string.rb_q9_a1);
+                    binding.rbAnswerTwo.setText(R.string.rb_q7_a1);
+                    binding.rbAnswerThree.setText(R.string.rb_q8_a1);
+                    binding.rbAnswerFour.setText(R.string.rb_q6_a1);
                 } else {
                     binding.questionNumber.setText(questionNumber);
                     binding.question.setText(R.string.rb_q10);
-                    binding.answerOne.setText(R.string.rb_q10_a1);
-                    binding.answerTwo.setText(R.string.rb_q8_a1);
-                    binding.answerThree.setText(R.string.rb_q6_a1);
-                    binding.answerFour.setText(R.string.rb_q7_a1);
+                    binding.rbAnswerOne.setText(R.string.rb_q10_a1);
+                    binding.rbAnswerTwo.setText(R.string.rb_q8_a1);
+                    binding.rbAnswerThree.setText(R.string.rb_q6_a1);
+                    binding.rbAnswerFour.setText(R.string.rb_q7_a1);
                 }
                 break;
         }
@@ -149,15 +150,15 @@ public class RadioQuestionActivity extends AppCompatActivity {
         String questionNumber = getString(R.string.question_numb_title);
         questionNumber = String.format(questionNumber, String.valueOf(savedExtra.get("questionPassed")));
 
-        if (!binding.answerOne.isChecked() && !binding.answerTwo.isChecked() &&
-                !binding.answerThree.isChecked() && !binding.answerFour.isChecked()) {
+        if (!binding.rbAnswerOne.isChecked() && !binding.rbAnswerTwo.isChecked() &&
+                !binding.rbAnswerThree.isChecked() && !binding.rbAnswerFour.isChecked()) {
             Toast.makeText(getApplicationContext(), R.string.pick_something_please, Toast.LENGTH_SHORT).show();
         } else {
             //int receivedView = v.getId();
             ScoreActivity.setAnswerAttempt(onePoint);
 
             //This is the correct answer for Q1 &Q2
-            if (binding.answerOne.isChecked()) {
+            if (binding.rbAnswerOne.isChecked()) {
                 ScoreActivity.setCorrectAnswer(onePoint);
             } else {
                 ScoreActivity.setWrongAnswer(onePoint);
